@@ -3,6 +3,7 @@ const LikeButton: React.FC = () => {
   const [like, setLike] = useState(0);
   const [on, setOn] = useState(true);
   useEffect(() => {
+    console.log("run", like);
     document.title = `点击了 ${like}`;
   }, [like]);
   // const [obj, setObj] = useState({ like: 0, on: true });

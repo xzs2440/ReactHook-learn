@@ -13,7 +13,7 @@ const MouseTracker: React.FC = () => {
       console.log("remove effect", positions.x);
       document.removeEventListener("click", updateMouse);
     };
-  });
+  },[]);
   console.log("before render", positions.x);
 
   // const [obj, setObj] = useState({ like: 0, on: true });
