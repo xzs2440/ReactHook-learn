@@ -1,11 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import useMousePosition from "../hooks/useMousePosition";
+import { ThemeContext } from "../App";
 const LikeButton: React.FC = () => {
   const likeRef = useRef(0);
   const didMountRef = useRef(false);
   const domRef = useRef<HTMLInputElement>(null);
   const [like, setLike] = useState(0);
   const [on, setOn] = useState(true);
+  const theme = useContext(ThemeContext);
+  const style = {
+    color: theme.color,
+    background: theme.background,
+  };
   // const positions = useMousePosition();
   useEffect(() => {
     console.log("run", like);
@@ -36,6 +42,7 @@ const LikeButton: React.FC = () => {
       </p> */}
       <input type="text" ref={domRef} />
       <button
+        style={style}
         onClick={() => {
           setLike(like + 1);
           likeRef.current++;
