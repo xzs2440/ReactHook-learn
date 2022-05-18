@@ -22,7 +22,7 @@ interface IShowResult {
 // };
 function App() {
   const [show, setShow] = useState(true);
-  const positions = useMousePosition();
+  // const positions = useMousePosition();
   const [data, loading] = useURLLoader(
     "https://dog.ceo/api/breeds/image/random",
     [show]
@@ -37,21 +37,21 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         {/* <WrappedDogShow /> */}
-        <p>
+        {/* <p>
           X:{positions.x} , Y:{positions.y}
         </p>
         <p>
           <button onClick={() => setShow(!show)}>Toggle Tracker</button>
-        </p>
-        {loading ? (
+        </p> */}
+        {/* {loading ? (
           <p>🐕 读取中... ...</p>
         ) : (
           <img src={dogResult && dogResult.message} />
-        )}
+        )} */}
 
         {/* <Hello message={"hello daxin"} /> */}
-        {/* <LikeButton /> */}
-        {show && <MouseTracker />}
+        <LikeButton />
+        {/* {show && <MouseTracker />} */}
       </header>
     </div>
   );
